@@ -20,7 +20,11 @@ def scrape_data():
         "https://www.satp.org/terrorist-activity/india-May-2024",
         "https://www.satp.org/terrorist-activity/india-Jun-2024",
         "https://www.satp.org/terrorist-activity/india-Jul-2024",
-        "https://www.satp.org/terrorist-activity/india-Aug-2024"
+        "https://www.satp.org/terrorist-activity/india-Aug-2024",
+        "https://www.satp.org/terrorist-activity/india-Sep-2024",
+        "https://www.satp.org/terrorist-activity/india-Oct-2024",
+        "https://www.satp.org/terrorist-activity/india-Nov-2024",
+        "https://www.satp.org/terrorist-activity/india-Dec-2024"
     ]
 
     data = []
