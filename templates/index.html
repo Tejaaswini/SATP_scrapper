@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SATP Activity Report - 2024</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,10 +15,10 @@
                     <a href="/download_year" class="btn btn-primary">Download This Year</a>
                 </div>
                 <div>
-                    <form action="/download_month" method="POST" class="form-inline">
-                        <select name="month" class="form-control mr-2">
+                    <form id="monthForm" action="/" method="POST" class="form-inline">
+                        <select id="monthSelect" name="month" class="form-control mr-2" onchange="this.form.submit()">
                             {% for month in months %}
-                            <option value="{{ month }}">{{ month }}</option>
+                            <option value="{{ month }}" {% if month == selected_month %}selected{% endif %}>{{ month }}</option>
                             {% endfor %}
                         </select>
                         <button type="submit" class="btn btn-secondary">Download Selected Month</button>
@@ -39,7 +38,7 @@
                 {% for row in data %}
                 <tr>
                     <td>{{ row['Month'] }}</td>
-                    <td>{{ row['Date'] }}</td>
+                    <td style="width: 120px;">{{ row['Date'] }}</td>
                     <td>{{ row['Incident'] }}</td>
                 </tr>
                 {% endfor %}
