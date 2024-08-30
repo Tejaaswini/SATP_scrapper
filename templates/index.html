@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATP Activity Report - 2024</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="mt-5">
+            <h1>SATP Activity Report - 2024</h1>
+            <div class="d-flex justify-content-between mt-4">
+                <div>
+                    <a href="/download_year" class="btn btn-primary">Download This Year</a>
+                </div>
+                <div>
+                    <form action="/download_month" method="POST" class="form-inline">
+                        <select name="month" class="form-control mr-2">
+                            {% for month in months %}
+                            <option value="{{ month }}">{{ month }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-secondary">Download Selected Month</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <table id="activityTable" class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Date</th>
+                    <th>Incident</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row['Month'] }}</td>
+                    <td>{{ row['Date'] }}</td>
+                    <td>{{ row['Incident'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
