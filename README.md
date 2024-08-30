@@ -31,7 +31,7 @@ pip install selenium beautifulsoup4 pandas schedule
 
 ## Usage
 
-1. **Setup ChromeDriver**: Download the Chrome WebDriver from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads) and place it in a directory that is in your system's PATH or specify its location in the `webdriver.Chrome()` initialization.
+1. **Setup ChromeDriver**: Download the Chrome WebDriver and place it in a directory that is in your system's PATH or specify its location in the `webdriver.Chrome()` initialization.
 
 2. **Run the Scraper**: Execute the Python script to start the scraping process.
 
